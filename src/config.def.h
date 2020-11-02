@@ -124,6 +124,10 @@ static const char *colorname[] = {
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
+	/* Foreground and backgroud */
+	"gray90",
+	"black",
+	/* Cursor color and reverse cursor color */
 	"#cccccc",
 	"#555555",
 };
@@ -133,10 +137,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
+unsigned int defaultcs = 258;
+unsigned int defaultrcs = 259;
 
 /*
  * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
@@ -202,9 +206,10 @@ ResourcePref resources[] = {
 		{ "color13",      STRING,  &colorname[13] },
 		{ "color14",      STRING,  &colorname[14] },
 		{ "color15",      STRING,  &colorname[15] },
-		{ "background",   STRING,  &colorname[256] },
-		{ "foreground",   STRING,  &colorname[257] },
+		{ "background",   STRING,  &colorname[257] },
+		{ "foreground",   STRING,  &colorname[256] },
 		{ "cursorColor",  STRING,  &colorname[258] },
+		{ "cursorColor2", STRING,  &colorname[259] },
 		{ "termname",     STRING,  &termname },
 		{ "shell",        STRING,  &shell },
 		{ "minlatency",   INTEGER, &minlatency },

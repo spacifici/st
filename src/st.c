@@ -1018,8 +1018,8 @@ treset(void)
 
 	term.c = (TCursor){{
 		.mode = ATTR_NULL,
-		.fg = defaultfg,
-		.bg = defaultbg
+		.fg = defaultcs,
+		.bg = defaultrcs
 	}, .x = 0, .y = 0, .state = CURSOR_DEFAULT};
 
 	memset(term.tabs, 0, term.col * sizeof(*term.tabs));
