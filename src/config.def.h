@@ -215,6 +215,8 @@ ResourcePref resources[] = {
 		{ "borderpx",     INTEGER, &borderpx },
 		{ "cwscale",      FLOAT,   &cwscale },
 		{ "chscale",      FLOAT,   &chscale },
+		{ "cols",         INTEGER, &cols },
+		{ "rows",         INTEGER, &rows },
 };
 
 /*
