@@ -11,16 +11,18 @@ static int borderpx = 2;
 /*
  * What program is execed by st depends of these precedence rules:
  * 1: program passed with -e
- * 2: scroll and/or utmp
- * 3: SHELL environment variable
- * 4: value of shell in /etc/passwd
- * 5: value of shell in config.h
+ * 2: program passed via the program Xresources option
+ * 3: scroll and/or utmp
+ * 4: SHELL environment variable
+ * 5: value of shell in /etc/passwd
+ * 6: value of shell in config.h
  */
 static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
+char *program = NULL;
 
 /* identification sequence returned in DA and DECID */
 char *vtiden = "\033[?6c";
@@ -206,6 +208,7 @@ ResourcePref resources[] = {
 		{ "cursorColor2", STRING,  &colorname[259] },
 		{ "termname",     STRING,  &termname },
 		{ "shell",        STRING,  &shell },
+		{ "program",      STRING,  &program },
 		{ "minlatency",   INTEGER, &minlatency },
 		{ "maxlatency",   INTEGER, &maxlatency },
 		{ "blinktimeout", INTEGER, &blinktimeout },
