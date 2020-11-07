@@ -1,3 +1,5 @@
+# st - suckless simple terminal
+
 This is my take on [st][1] terminal from suckless. As a [tmux][2] user, I do not
 like the my terminal emulator to have tons of unneeded features with (sometimes)
 conflicting key bindings: i.e. I do not need two ways to scroll, have splits and
@@ -40,5 +42,17 @@ Below the list of applied patches and mods I made to the original code.
   * **blinking cursor patch**
 
 
+## Emoji support
+
+It is well known [st refuses to have a patch for emoji support][4] as the
+problem is a bug in [libXft][3]. In order to overcome the bug, I compile and
+install my own version of libXft: if you are an Ubuntu 20.04 user, here you can
+find [my patched deb package][5] and its [source code][6].
+
+
 [1]: https://st.suckless.org/
 [2]: https://github.com/tmux/tmux
+[3]: https://gitlab.freedesktop.org/xorg/lib/libxft
+[4]: https://git.suckless.org/st/file/FAQ.html#l224
+[5]: https://github.com/spacifici/xft/releases/download/v2.3.3-bgra/libxft2-bgra_2.3.3-0ubuntu1_amd64.deb
+[6]: https://github.com/spacifici/xft
